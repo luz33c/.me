@@ -2,6 +2,10 @@ import { ReactNode } from 'react'
 import type { Authors } from 'contentlayer/generated'
 import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
+import WorkingHistory from '@/components/WorkingHistory'
+import Skills from '@/components/Skills'
+
+// type AuthorsWithMobile = Authors & { telephone: string }
 
 interface Props {
   children: ReactNode
@@ -9,7 +13,8 @@ interface Props {
 }
 
 export default function AuthorLayout({ children, content }: Props) {
-  const { name, avatar, occupation, company, email, twitter, linkedin, github } = content
+  const { name, avatar, occupation, company, email, twitter, linkedin, github, telephone, wechat } =
+    content
 
   return (
     <>
@@ -34,6 +39,8 @@ export default function AuthorLayout({ children, content }: Props) {
               />
             )}
             <h3 className="pb-2 pt-4 text-2xl font-bold leading-8 tracking-tight">{name}</h3>
+            <div className="text-gray-500 dark:text-gray-400">{telephone}</div>
+            {wechat && <div className="text-gray-500 dark:text-gray-400">微信: {wechat}</div>}
             <div className="text-gray-500 dark:text-gray-400">{occupation}</div>
             <div className="text-gray-500 dark:text-gray-400">{company}</div>
             <div className="flex space-x-3 pt-6">
@@ -41,6 +48,18 @@ export default function AuthorLayout({ children, content }: Props) {
               <SocialIcon kind="github" href={github} />
               <SocialIcon kind="linkedin" href={linkedin} />
               <SocialIcon kind="twitter" href={twitter} />
+            </div>
+            <div className="w-full mt-2">
+              <h3 className="pb-2 pt-4 text-2xl font-bold leading-8 tracking-tight">技能:</h3>
+              <Skills />
+            </div>
+            <div className="w-full mt-2">
+              <h3 className="pb-2 pt-4 text-2xl font-bold leading-8 tracking-tight">工作历史:</h3>
+              <WorkingHistory />
+            </div>
+            <div className="w-full mt-2">
+              <h3 className="pb-2 pt-4 text-2xl font-bold leading-8 tracking-tight">教育:</h3>
+              青岛大学 计算机信息管理
             </div>
           </div>
         </div>

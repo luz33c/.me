@@ -3,7 +3,7 @@ const siteMetadata = {
   title: '一个程序员的blog',
   author: 'luz33c',
   headerTitle: 'Luz',
-  description: '一个程序员的blog，关于js，rust，react，徒步，Les Mills，电影，美食',
+  description: '可能的内容范围: 有关编程（js，rust，react），个人兴趣（徒步，健身，电影，美食等）',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
